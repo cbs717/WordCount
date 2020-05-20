@@ -1,0 +1,2 @@
+D:\gitrepository\WordCount\Debug\WordCount.exe
+D:\gitrepository\WordCount\Debug\WordCount.pdb
