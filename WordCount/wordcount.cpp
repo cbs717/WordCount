@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 
-int count_char(char* name)
+int count_char(char * name)
 {
 	FILE* fp;
 	int num = 0;
@@ -21,12 +21,12 @@ int count_char(char* name)
 	return num;
 }
 
-int count_word(char* name)
+int count_word(char * name)
 {
 	FILE* fp;
-	int num = 0;
+	//int num = 0;
 	int word = 0;
-	int t_word = 0;
+	
 	char find;
 	if ((fp = fopen(name, "r")) == NULL)
 	{
@@ -35,19 +35,19 @@ int count_word(char* name)
 	}
 	while ((find = getc(fp)) != EOF)
 	{
-		num++;
-		if ((find >= 'A' && find <= 'Z') || (find >= 'a' && find <= 'z'))
+		
+		if (find == ' '||find == ',')
 		{
-			t_word++;
+			word++;
 		}
 	}
 	fclose(fp);
-	return num;
+	return word;
 		
 }
-int main(int argc, char* argv[])
+int main(int argc, char * argv[])
 {
-	if (strcmp(argv[1], "-c") == 0)
+	if (strcmp("1", "-c") == 0)
 	{
 		printf("character %d\n", count_char(argv[2]));
 	}
